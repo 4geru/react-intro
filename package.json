@@ -21,7 +21,8 @@
     "eslint-plugin-import": "^2.2.0",
     "html-webpack-plugin": "^2.28.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

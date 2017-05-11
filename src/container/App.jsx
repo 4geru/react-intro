@@ -1,8 +1,9 @@
 import React from 'react'
-import { createStore, combineReducers} from 'redux'
+import { createStore, combineReducers, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
 import counterReducer from '../reducers/counter'
 import Counter from '../components/Counter'
+
 
 const store = createStore(combineReducers({ // root data
   counter: counterReducer

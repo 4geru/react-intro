@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 const dispathStateToProps = dispatch => ({
   countUp     : () => dispatch({type: 'COUNTER.ADD', payload: {number: 1} }),
   countDown   : () => dispatch({type: 'COUNTER.ADD', payload: {number: -1} }),
-  countDouble : () => dispatch({type: 'COUNTER.DOUBLE' })
+  countDouble : () => dispatch({type: 'COUNTER.DOUBLE' }),
+  asyncCountDouble : () => setTimeout(() => dispatch({type: 'COUNTER.DOUBLE' }), 2000)
 })
 
 @connect(mapStateToProps, dispathStateToProps)
@@ -19,7 +20,8 @@ export default class Counter extends React.Component{
       count, 
       countUp,
       countDown,
-      countDouble
+      countDouble,
+      asyncCountDouble
     } = this.props
 
     return (
@@ -29,6 +31,7 @@ export default class Counter extends React.Component{
         <button onClick={countUp}>{'up'}</button>
         <button onClick={countDown}>{'down'}</button>
         <button onClick={countDouble}>{'double'}</button>
+        <button onClick={asyncCountDouble}>{'double'}</button>
       </main>
     )
   }
